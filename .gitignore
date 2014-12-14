@@ -1,0 +1,14 @@
+.idea/
+target
+*.iml
+*.lock
+*.zip
+*.log
+*.ini
+*.classpath
+*.project
+.settings
+.sass-cache
+web/css
+web/node_modules
+vendor

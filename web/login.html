@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html ng-app="homeExpenseAppDev">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Home Expenses</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" type="text/css" href="css/vendor/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="css/login.css"/>
+</head>
+<body>
+<div class="container">
+    <div class="row" ng-controller="loginController">
+        <div class="col-sm-6 col-md-4 col-md-offset-4">
+
+            <section class="signing-screen" ng-hide="showCreateAccount">
+                <h1 class="text-center">Welcome</h1>
+
+                <div class="account-wall">
+
+                    <form class="form-signing">
+                        <input type="text" class="form-control" placeholder="Username" required autofocus>
+                        <input type="password" class="form-control" placeholder="Password" required>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">
+                            Sign in
+                        </button>
+                    </form>
+                </div>
+                <a href="#" class="text-center new-account" ng-click="goToAccountCreationScreen()">Create an account</a>
+            </section>
+
+            <section class="create-account-screen" ng-show="showCreateAccount">
+                <h1 class="text-center">Create account</h1>
+
+                <div class="account-wall">
+
+                    <form class="form-create-account">
+                        <input ng-model="username" type="text" class="form-control" placeholder="Username" required autofocus>
+                        <input ng-model="password" type="password" class="form-control" placeholder="Password" required>
+                        <input ng-model="repeatPassword" type="password" class="form-control"
+                               placeholder="Repeat Password" required>
+                        <label class="error" ng-if="repeatPassword !== '' && password !== repeatPassword">Passwords
+                            do not match</label>
+                        <label class="error" ng-show="validationError">Technical error</label>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="createAccount()">
+                            Create
+                        </button>
+                    </form>
+                </div>
+
+                <a href="#" class="text-center sign-in" ng-click="goToSigningScreen()">Sign in</a>
+            </section>
+
+        </div>
+    </div>
+</div>
+
+<script src="js/vendor/angular.min.js"></script>
+<script src="node_modules/angular-mocks/angular-mocks.js"></script>
+<script src="stubs/httpBackendStub.js"></script>
+<script src="js/module.js"></script>
+<script src="js/constants.js"></script>
+<script src="js/service/accountService.js"></script>
+
+</body>
+</html>

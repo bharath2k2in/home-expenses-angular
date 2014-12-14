@@ -1,0 +1,75 @@
+.container {
+
+  font-family: 'Myriad Pro';
+
+  .signing-screen,
+  .create-account-screen {
+
+    .account-wall {
+//      margin-top: 20px;
+      padding: 20px 0px 20px 0px;
+      background-color: #f7f7f7;
+      -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+      -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+      box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+
+      .profile-img {
+        width: 96px;
+        height: 96px;
+        margin: 0 auto 10px;
+        display: block;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+      }
+
+      .form-signing,
+      .form-create-account {
+        max-width: 330px;
+        padding: 0 15px 15px;
+        margin: 0 auto;
+
+        .form-control {
+          position: relative;
+          font-size: 16px;
+          height: auto;
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+        }
+
+        .form-control:focus {
+          z-index: 2;
+        }
+
+        input {
+          margin-top: 20px;
+        }
+
+        .btn {
+          margin-top: 20px;
+        }
+
+        .error {
+          color: red;
+          padding-left: 10px;
+          margin-bottom: -1px;
+          margin-top: 5px;
+        }
+      }
+    }
+
+    .new-account,
+    .sign-in {
+      display: block;
+      margin-top: 10px;
+      font-size: 16px;
+    }
+  }
+}
+
+@font-face {
+  font-family: 'Myriad Pro';
+
+  src: url('../fonts/MyriadPro-Regular.otf');
+}
