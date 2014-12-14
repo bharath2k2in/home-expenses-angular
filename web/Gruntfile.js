@@ -7,13 +7,21 @@ module.exports = function (grunt) {
             'dev': {
                 port: 8080,
                 host: "127.0.0.1"
-                //root: '/'
             }
+        },
+
+        jshint: {
+            all: [
+                'Gruntfile.js',
+                'js/**/*.js',
+                '!js/vendor/**/*.js',
+            ]
         }
     })
     ;
 
     grunt.loadNpmTasks('grunt-http-server');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
 
     grunt.registerTask('serve', ['http-server:dev']);
 
