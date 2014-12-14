@@ -6,9 +6,10 @@
   .create-account-screen {
 
     .account-wall {
-//      margin-top: 20px;
-      padding: 20px 0px 20px 0px;
+      padding: 20px 20px 20px 20px;
       background-color: #f7f7f7;
+      max-width: 330px;
+      margin: 0 auto;
       -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
       -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
       box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
@@ -23,39 +24,32 @@
         border-radius: 50%;
       }
 
-      .form-signing,
-      .form-create-account {
-        max-width: 330px;
-        padding: 0 15px 15px;
-        margin: 0 auto;
+      .form-control {
+        position: relative;
+        font-size: 16px;
+        height: auto;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
 
-        .form-control {
-          position: relative;
-          font-size: 16px;
-          height: auto;
-          -webkit-box-sizing: border-box;
-          -moz-box-sizing: border-box;
-          box-sizing: border-box;
-        }
+      .form-control:focus {
+        z-index: 2;
+      }
 
-        .form-control:focus {
-          z-index: 2;
-        }
+      input {
+        margin-top: 20px;
+      }
 
-        input {
-          margin-top: 20px;
-        }
+      .btn {
+        margin-top: 20px;
+      }
 
-        .btn {
-          margin-top: 20px;
-        }
-
-        .error {
-          color: red;
-          padding-left: 10px;
-          margin-bottom: -1px;
-          margin-top: 5px;
-        }
+      .error {
+        color: red;
+        padding-left: 10px;
+        margin-bottom: -1px;
+        margin-top: 5px;
       }
     }
 
@@ -70,6 +64,5 @@
 
 @font-face {
   font-family: 'Myriad Pro';
-
   src: url('../fonts/MyriadPro-Regular.otf');
 }
