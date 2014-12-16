@@ -6,6 +6,5 @@ homeExpenseAppDev.run(function($httpBackend) {
 
     // adds a new phone to the phones array
     $httpBackend.whenPOST('/homeexpense/createaccount').respond(200, {response : true});
-    $httpBackend.whenGET(/^\/templates\//).passThrough();
-    //...
+    $httpBackend.whenGET(/home-expenses\/.*/).passThrough();
 });

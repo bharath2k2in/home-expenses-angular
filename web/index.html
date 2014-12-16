@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="homeExpenseAppDev">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Home Expenses</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" type="text/css" href="css/vendor/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="css/login.css"/>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-md-offset-4">
+            <div ng-include src="'home-expenses/login/login.html'" ng-controller="loginController"></div>
+        </div>
+    </div>
+</div>
+
+<script src="js/vendor/angular.min.js"></script>
+<script src="node_modules/angular-mocks/angular-mocks.js"></script>
+<script src="stubs/httpBackendStub.js"></script>
+<script src="home-expenses/login/login.js"></script>
+<script src="js/constants.js"></script>
+<script src="js/service/accountService.js"></script>
+</body>
+</html>
