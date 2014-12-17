@@ -12,7 +12,7 @@
                 </button>
             </form>
         </div>
-        <a href="#" class="text-center new-account" ng-click="goToAccountCreationScreen()">Create an account</a>
+        <a href="#" class="text-center new-account" ng-click="switchLoginScreens()">Create an account</a>
     </section>
 
     <section class="create-account-screen" ng-show="showCreateAccount">
@@ -21,11 +21,14 @@
         <div class="account-wall">
 
             <form class="form-create-account" ng-submit="createAccount()">
-                <input ng-model="username" type="text" class="form-control" placeholder="Username" required autofocus>
-                <input ng-model="password" type="password" class="form-control" placeholder="Password" required>
-                <input ng-model="repeatPassword" type="password" class="form-control"
+                <input ng-model="defaults.username" type="text" class="form-control" placeholder="Username" required
+                       autofocus>
+                <input ng-model="defaults.password" type="password" class="form-control" placeholder="Password"
+                       required>
+                <input ng-model="defaults.repeatPassword" type="password" class="form-control"
                        placeholder="Repeat Password" required>
-                <label class="error" ng-if="repeatPassword !== '' && password !== repeatPassword">Passwords
+                <label class="error"
+                       ng-if="defaults.repeatPassword !== '' && defaults.password !== defaults.repeatPassword">Passwords
                     do not match</label>
                 <label class="error" ng-show="validationError">Technical error</label>
                 <button class="btn btn-lg btn-primary btn-block" type="submit">
@@ -34,6 +37,6 @@
             </form>
         </div>
 
-        <a href="#" class="text-center sign-in" ng-click="goToSigningScreen()">Sign in</a>
+        <a href="#" class="text-center sign-in" ng-click="switchLoginScreens()">Sign in</a>
     </section>
 </div>

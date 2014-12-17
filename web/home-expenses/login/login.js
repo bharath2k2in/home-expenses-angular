@@ -3,9 +3,11 @@ angular.module('homeExpenseApp', [])
         'use strict';
 
         function clearInputData() {
-            $scope.username = '';
-            $scope.password = '';
-            $scope.repeatPassword = '';
+            $scope.defaults = {
+                username: '',
+                password: '',
+                repeatPassword: ''
+            }
         }
 
         $scope.showCreateAccount = false;
@@ -13,23 +15,19 @@ angular.module('homeExpenseApp', [])
 
         clearInputData();
 
-        $scope.goToAccountCreationScreen = function () {
-            $scope.showCreateAccount = true;
-        };
-
-        $scope.goToSigningScreen = function () {
-            $scope.showCreateAccount = false;
+        $scope.switchLoginScreens = function () {
+            $scope.showCreateAccount = !$scope.showCreateAccount;
         };
 
         $scope.createAccount = function () {
 
             var requestData = {
-                username: $scope.username,
-                password: $scope.password
+                username: $scope.defaults.username,
+                password: $scope.defaults.password
             };
             accountService.createAccount(requestData).then(function (responseData) {
                 if (responseData.response) {
-                    $scope.showCreateAccount = false;
+                    $scope.showCreateAccount = !$scope.showCreateAccount;
                     clearInputData();
                 } else {
                     $scope.validationError = true;
