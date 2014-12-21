@@ -3,7 +3,7 @@ angular.module('homeExpenseApp', [])
         'use strict';
 
         function clearInputData() {
-            $scope.defaults = {
+            $scope.user = {
                 username: '',
                 password: '',
                 repeatPassword: ''
@@ -22,8 +22,8 @@ angular.module('homeExpenseApp', [])
         $scope.createAccount = function () {
 
             var requestData = {
-                username: $scope.defaults.username,
-                password: $scope.defaults.password
+                username: $scope.user.username,
+                password: $scope.user.password
             };
             accountService.createAccount(requestData).then(function (responseData) {
                 if (responseData.response) {

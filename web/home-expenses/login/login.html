@@ -21,14 +21,14 @@
         <div class="account-wall">
 
             <form class="form-create-account" ng-submit="createAccount()">
-                <input ng-model="defaults.username" type="text" class="form-control" placeholder="Username" required
+                <input ng-model="user.username" type="text" class="form-control" placeholder="Username" required
                        autofocus>
-                <input ng-model="defaults.password" type="password" class="form-control" placeholder="Password"
+                <input ng-model="user.password" type="password" class="form-control" placeholder="Password"
                        required>
-                <input ng-model="defaults.repeatPassword" type="password" class="form-control"
+                <input ng-model="user.repeatPassword" type="password" class="form-control"
                        placeholder="Repeat Password" required>
                 <label class="error"
-                       ng-if="defaults.repeatPassword !== '' && defaults.password !== defaults.repeatPassword">Passwords
+                       ng-if="user.repeatPassword !== '' && user.password !== user.repeatPassword">Passwords
                     do not match</label>
                 <label class="error" ng-show="validationError">Technical error</label>
                 <button class="btn btn-lg btn-primary btn-block" type="submit">
